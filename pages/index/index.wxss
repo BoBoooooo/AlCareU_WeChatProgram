@@ -1,0 +1,10 @@
+
+swiper-item image {
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  height:100%;
+}
+swiper{
+  height: 1050rpx;
+}
