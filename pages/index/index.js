@@ -1,10 +1,10 @@
 Page({
   data: {
     imgUrls: [
-      '/images/banner/1.jpg',
-      '/images/banner/2.jpg',
-      '/images/banner/3.jpg'
-
+      'https://www.aicareu.com/dit1.jpg?' + Math.random() / 9999,
+      'https://www.aicareu.com/dit2.jpg?' + Math.random() / 9999,
+      'https://www.aicareu.com/dit3.jpg?' + Math.random() / 9999,
+      'https://www.aicareu.com/dit4.jpg?' + Math.random() / 9999
 
     ],
     indicatorDots: true,

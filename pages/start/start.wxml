@@ -13,7 +13,7 @@
       </view>
       <view class="bd">
         <view class="confirm-btn" bindtap='goToIndex'>
-          <text >AlCare健康服务</text>
+          <text >AlcareU</text>
         </view>
       </view>
     </view>
