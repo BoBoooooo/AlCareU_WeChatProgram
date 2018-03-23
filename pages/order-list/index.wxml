@@ -11,26 +11,26 @@
 
     </view>
     <view class="order-list" hidden="{{orderList ? false : true}}">
-        <view class="a-order" wx:for-items="{{orderList}}" wx:key="{{index}}">
+        <view class="a-order" wx:for-items="{{orderList}}" wx:key="{{index}}" >
             <view class="order-date">
-                <view class="date-box">预约时间：{{item.StartDate}}</view>
+                <view class="date-box">{{item.StartDate}}   {{item.TaskName}}</view>
                 <!-- <view class="status {{(item.status==-1 || item.status==4) ? '':'red'}}">{{item.statusStr}}</view> -->
             </view>
-             <view class="order-date">
-                <view class="date-box">预约信息：{{item.TaskName}}</view>
-                <!-- <view class="status {{(item.status==-1 || item.status==4) ? '':'red'}}">{{item.statusStr}}</view> -->
+         
+             <view class="order-date" style='position:relative'>
+                <view class="date-box" hidden="{{item.sequence==0 ? false : true}}">暂未预约</view>
+                <view class="date-box" hidden="{{item.sequence==0 ? true : false}}">已预约：{{item.sequence}}号</view>
+                   <view style='position:absolute;right:150rpx;top:20rpx' hidden="{{item.sequence==0 ? false : true}}" >
+                    <image bindtap='GetNo' src='/images/flag.png' style='width:45rpx;height:45rpx'  data-id="{{item.ID}}"></image>
+    </view>
+              <view style='position:absolute;right:50rpx;top:20rpx'>
+                    <image   src='/images/group.png' bindtap='GetCurrentNo' style='width:45rpx;height:45rpx' data-id="{{item.ID}}"></image>
+    </view>
             </view>
-             <view class="order-date">
-                <view class="date-box">预约号：{{item.sequence}}</view>
-                <!-- <view class="status {{(item.status==-1 || item.status==4) ? '':'red'}}">{{item.statusStr}}</view> -->
-            </view>
-          
-           
+         
         </view>
 
     </view>
 
-    <view style='position:fixed;bottom:0'>
-                    <image bindtap='GetNo' src='/images/add-addr.png' style='width:65rpx;height:65rpx'></image>
-    </view>
+  
 </view>

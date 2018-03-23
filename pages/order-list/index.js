@@ -4,7 +4,7 @@ Page({
     orderList: null
   },
 
- 
+
 
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
@@ -46,31 +46,42 @@ Page({
       url: 'https://www.aicareu.com/api/appointment/PullAppointmentList',
       header: {
         'auth': token
+
       },
       method: "post",
       success: (res) => {
         console.log(res);
         wx.hideLoading();
-   if(res.data.length>0){
-     that.setData({
-       orderList: res.data
-     });
+        if (res.data.length > 0) {
+          that.setData({
+            orderList: res.data
+          });
 
-   }
-     
-      },
-      
-    })
+
+
+
+
+        }
+      }
+
+    });
 
   },
-  GetNo:function(){
+  GetNo: function (e) {
     var that = this;
     var token = wx.getStorageSync('Token');
+    var orderId = e.currentTarget.dataset.id;
 
     wx.request({
       url: 'https://www.aicareu.com/api/appointment/SaveApp',
       header: {
-        'auth': token
+        'auth': token,
+        'Content-Type': "application/x-www-form-urlencoded"
+
+      },
+      data: {
+        id: orderId
+
       },
       method: "post",
       success: (res) => {
@@ -96,6 +107,49 @@ Page({
           });
         }
         that.onShow();
+
+      }
+
+    })
+  },
+
+  GetCurrentNo: function (e) {
+    var that = this;
+    var token = wx.getStorageSync('Token');
+    var orderId = e.currentTarget.dataset.id;
+
+    wx.request({
+      url: 'https://www.aicareu.com/api/appointment/PullCurrentNo',
+      header: {
+        'auth': token,
+        'Content-Type': "application/x-www-form-urlencoded"
+
+      },
+      data: {
+        id: orderId
+
+      },
+      method: "post",
+      success: (res) => {
+        console.log(res);
+        if (res.data.Success) {
+          wx.hideLoading();
+        
+          wx.showModal({
+            title: '提示',
+            content: res.data.Message,
+            showCancel: false
+          });
+        }
+
+        else {
+          wx.hideLoading();
+          wx.showModal({
+            title: '提示',
+            content: res.data.Message,
+            showCancel: false
+          });
+        }
 
       }
 

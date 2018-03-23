@@ -1,5 +1,97 @@
-<import src="/wxParse/wxParse.wxml"/>
-<view class='container'>
-<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+<view class="container">
+    <view class="status-box">
+        <view bindtap="statusTap" class="status-label {{index == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}">
+            {{item}}
+            <view class="{{tabClass[index]}}"></view>
+        </view>
+    </view>
+  
+    <view class="order-list" hidden="{{currentType==1 ? true : false}}">
+      <import src="/wxParse/wxParse.wxml"/>
+      <view class='container'>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
 
+      </view>
+
+    </view>
+
+
+
+        <view class="order-list" hidden="{{currentType==0  ? true : false}}">
+        <view class="page">
+  
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__section">
+                <view class="weui-article__section">
+                    <!-- <view class="weui-article__h3">1.1 节标题</view> -->
+                    <view class="weui-article__p">
+                      {{Des.description1}}
+                    </view>
+                        <view class="weui-article__p">
+                      {{Des.description2}}
+                    </view>
+                        <view class="weui-article__p">
+                      {{Des.description3}}
+                    </view>
+                        <view class="weui-article__p">
+                      {{Des.description4}}
+                    </view>
+                        <view class="weui-article__p">
+                      {{Des.description5}}
+                    </view>
+                        <view class="weui-article__p">
+                      {{Des.description6}}
+                    </view>
+                        <view class="weui-article__p">
+                      {{Des.description7}}
+                    </view>
+                        <view class="weui-article__p">
+                      {{Des.description8}}
+                    </view>
+                        <view class="weui-article__p">
+                      {{Des.description9}}
+                    </view>
+                        <view class="weui-article__p">
+                      {{Des.description10}}
+                    </view>
+     <view class="weui-article__p">
+                      {{Des.description11}}
+                    </view>
+     <view class="weui-article__p">
+                      {{Des.description12}}
+                    </view>
+     <view class="weui-article__p">
+                      {{Des.description13}}
+                    </view>
+     <view class="weui-article__p">
+                      {{Des.description14}}
+                    </view>
+     <view class="weui-article__p">
+                      {{Des.description15}}
+                    </view>
+     <view class="weui-article__p">
+                      {{Des.description16}}
+                    </view>
+
+                      <view class="weui-article__p">
+                      {{Des.description17}}
+
+                    </view>
+                         <view class="weui-article__p">
+                      {{Des.description18}}
+                    </view>
+
+     <view class="weui-article__p">
+                      {{Des.description_total}}
+                    </view>
+
+                </view>
+              
+            </view>
+        </view>
+    </view>
+</view>
+
+    </view>
 </view>

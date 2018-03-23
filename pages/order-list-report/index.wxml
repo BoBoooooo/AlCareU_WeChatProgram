@@ -25,7 +25,7 @@
                 <!-- <view class="status {{(item.status==-1 || item.status==4) ? '':'red'}}">{{item.statusStr}}</view> -->
             </view>
           
-            <image src='/images/search-pic.png' class="weui-btn mini-btn" type="default" size="mini"  data-id="{{item.ID}}" bindtap="orderDetail" style='position:absolute;right:30rpx;top:30rpx;width:50rpx;height:50rpx'></image>
+            <image src='/images/accessory.png' class="weui-btn mini-btn" type="default" size="mini"  data-id="{{item.ID}}" bindtap="orderDetail" style='position:absolute;right:30rpx;top:30rpx;width:50rpx;height:50rpx'></image>
         </view>
 
     </view>
