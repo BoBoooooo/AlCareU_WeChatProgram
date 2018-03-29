@@ -1,97 +1,128 @@
 <view class="container">
-    <view class="status-box">
-        <view bindtap="statusTap" class="status-label {{index == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}">
-            {{item}}
-            <view class="{{tabClass[index]}}"></view>
-        </view>
+  <view class="status-box">
+    <view bindtap="statusTap" class="status-label {{index == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}">
+      {{item}}
+      <view class="{{tabClass[index]}}"></view>
     </view>
-  
-    <view class="order-list" hidden="{{currentType==1 ? true : false}}">
-      <import src="/wxParse/wxParse.wxml"/>
-      <view class='container'>
-      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
 
-      </view>
+  <view class="order-list" hidden="{{currentType==1 ? true : false}}">
+    <import src="/wxParse/wxParse.wxml" />
+    <view class='container'>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
 
     </view>
 
+  </view>
 
 
-        <view class="order-list" hidden="{{currentType==0  ? true : false}}">
-        <view class="page">
-  
-    <view class="page__bd">
-        <view class="weui-article">
+
+  <view class="order-list" hidden="{{currentType==0  ? true : false}}">
+    <view class="page" style='background:#eee'>
+
+      <view class="page__bd">
+        <view class="weui-article" style='padding:20px 0px'>
+          <view class="weui-article__section">
             <view class="weui-article__section">
-                <view class="weui-article__section">
-                    <!-- <view class="weui-article__h3">1.1 节标题</view> -->
-                    <view class="weui-article__p">
-                      {{Des.description1}}
-                    </view>
-                        <view class="weui-article__p">
-                      {{Des.description2}}
-                    </view>
-                        <view class="weui-article__p">
-                      {{Des.description3}}
-                    </view>
-                        <view class="weui-article__p">
-                      {{Des.description4}}
-                    </view>
-                        <view class="weui-article__p">
-                      {{Des.description5}}
-                    </view>
-                        <view class="weui-article__p">
-                      {{Des.description6}}
-                    </view>
-                        <view class="weui-article__p">
-                      {{Des.description7}}
-                    </view>
-                        <view class="weui-article__p">
-                      {{Des.description8}}
-                    </view>
-                        <view class="weui-article__p">
-                      {{Des.description9}}
-                    </view>
-                        <view class="weui-article__p">
-                      {{Des.description10}}
-                    </view>
-     <view class="weui-article__p">
-                      {{Des.description11}}
-                    </view>
-     <view class="weui-article__p">
-                      {{Des.description12}}
-                    </view>
-     <view class="weui-article__p">
-                      {{Des.description13}}
-                    </view>
-     <view class="weui-article__p">
-                      {{Des.description14}}
-                    </view>
-     <view class="weui-article__p">
-                      {{Des.description15}}
-                    </view>
-     <view class="weui-article__p">
-                      {{Des.description16}}
-                    </view>
+              <!-- <view class="weui-article__h3">1.1 节标题</view> -->
+              <text style='background:#FF3030;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>总检结论</text>
+              <view class="weui-article__p">
+                {{Des.description_total}}
+              </view>
+              <text style='background:#FF8C00;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>血常规</text>
+              <view class="weui-article__p">
+                {{Des.description1}}
+              </view>
+              <text style='background:#FFD700;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>水及电解质代谢</text>
+              <view class="weui-article__p">
+                {{Des.description2}}
+              </view>
+              <text style='background:#71C671;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>血液凝集系统
+</text>
+              <view class="weui-article__p">
+                {{Des.description3}}
+              </view>
+              <text style='background:#436EEE;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>肺等相关指标
+</text>
+              <view class="weui-article__p">
+                {{Des.description4}}
+              </view>
+              <text style='background:#6CA6CD;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>氧气转运及利用
+</text>
+              <view class="weui-article__p">
+                {{Des.description5}}
+              </view>
+              <text style='background:#6959CD;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>心脏及其动力学指标
+</text>
+              <view class="weui-article__p">
+                {{Des.description6}}
+              </view>
+              <text style='background:#BC8F8F;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>肝、胆、胃等相关指标
+</text>
+              <view class="weui-article__p">
+                {{Des.description7}}
+              </view>
+              <text style='background:#B22222;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>肾脏相关指标
+</text>
+              <view class="weui-article__p">
+                {{Des.description8}}
+              </view>
+              <text style='background:#EE6AA7;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>生殖系统
+</text>
+              <view class="weui-article__p">
+                {{Des.description9}}
+              </view>
+              <text style='background:#8B6508;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>内分泌系统
+</text>
+              <view class="weui-article__p">
+                {{Des.description10}}
+              </view>
+              <text style='background:#6E8B3D;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>糖代谢
+</text>
+              <view class="weui-article__p">
+                {{Des.description11}}
+              </view>
+              <text style='background:#CD1076;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>脂代谢
+</text>
+              <view class="weui-article__p">
+                {{Des.description12}}
+              </view>
+              <text style='background:#8FBC8F;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>情绪指数（快乐指数）
+</text>
+              <view class="weui-article__p">
+                {{Des.description13}}
+              </view>
+              <text style='background:#FF7F24;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>大脑及其相关指标</text>
+              <view class="weui-article__p">
+                {{Des.description14}}
+              </view>
+              <text style='background:#CD3278;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>运动指标</text>
+              <view class="weui-article__p">
+                {{Des.description15}}
+              </view>
+              <text style='background:#EEAD0E;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>免疫力活性指标</text>
+              <view class="weui-article__p">
+                {{Des.description16}}
+              </view>
+              <text style='background:#7D9EC0;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>皮肤测试指标</text>
 
-                      <view class="weui-article__p">
-                      {{Des.description17}}
+              <view class="weui-article__p">
+                {{Des.description17}}
 
-                    </view>
-                         <view class="weui-article__p">
-                      {{Des.description18}}
-                    </view>
+              </view>
+              <text style='background:#458B74;border-radius:0 1em 1em 0;color:#fff;padding-right:1em;padding-left:.7em;'>健康透支指标</text>
+              <view class="weui-article__p">
+                {{Des.description18}}
+              </view>
 
-     <view class="weui-article__p">
-                      {{Des.description_total}}
-                    </view>
 
-                </view>
-              
+
             </view>
-        </view>
-    </view>
-</view>
 
+          </view>
+        </view>
+      </view>
     </view>
+
+  </view>
 </view>
