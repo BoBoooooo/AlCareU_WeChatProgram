@@ -19,7 +19,6 @@ page{
 .login-img{ 
  width: 750rpx;
  height: 300rpx;
- margin-top:25px;
 } 
   
 /*表单内容*/
@@ -33,6 +32,7 @@ page{
 .inputView { 
  background-color: #fff; 
  line-height: 44px; 
+ border-radius: .3em;
 } 
 /*输入框*/
 .nameImage, .keyImage { 

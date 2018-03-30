@@ -98,15 +98,14 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        if (!res.data.Success)
+        if (res.data.Success)
         {
           wx.showToast({
             title: res.data.Message,
-            icon: 'success',
             duration: 2000,
             complete: function () { 
               wx.redirectTo({
-                url: "/pages/start/start",
+                url: "/pages/login/login",
               })
             } 
           })
