@@ -6,17 +6,15 @@
 
   </view>
   <view class="order-list" hidden="{{orderList ? false : true}}">
-    <view class="a-order" wx:for-items="{{orderList}}" wx:key="{{index}}">
+    <view class="a-order" wx:for-items="{{orderList}}" wx:key="{{index}}" style='position:relative'>
       <view class="order-date">
         <view class="date-box">{{item.StartDate}} {{item.TaskName}}</view>
       </view>
 
-      <view class="order-date" style='position:relative'>
-        <view class="date-box" hidden="{{item.sequence==0 ? false : true}}">暂未预约，当前<text class='Current'>{{item.TaskNo}}号</text></view>
+      <view class="order-date">
+        <view class="date-box" hidden="{{item.sequence==0 ? false : true}}">暂未预约，当前<text class='Current'>{{item.TaskNo}}</text>号</view>
         <view class="date-box" hidden="{{item.sequence==0 ? true : false}}">已预约<text class='Own'>{{item.sequence}}</text>号，当前<text class='Current'>{{item.TaskNo}}</text>号</view>
-        <view style='position:absolute;right:150rpx;top:20rpx' hidden="{{item.sequence==0 ? false : true}}">
-          <image bindtap='GetNo' src='/images/flag.png' style='width:45rpx;height:45rpx' data-id="{{item.ID}}"></image>
-        </view>
+         <button hidden="{{item.sequence==0 ? false : true}}"  type="default" size="mini"  data-id="{{item.ID}}"  bindtap="GetNo" style='position:absolute;right:37rpx;top:40rpx;width:6.3em;height:6.3em;line-height:6.3em;border-radius:2em;background-color:#fff;border-color:#00BFFF;color:#00BFFF'>取号</button>
       
       </view>
 
