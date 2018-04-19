@@ -13,7 +13,7 @@
                 <view class="date-box">报告名称：{{item.ReportName}}</view>
             </view>
           
-            <button  type="default" size="mini"  data-id="{{item.ID}}" bindtap="orderDetail" style='position:absolute;right:37rpx;top:40rpx;width:6.3em;height:6.3em;line-height:6.3em;border-radius:2em;background-color:#fff;border-color:#00BFFF;color:#00BFFF'>查看</button>
+            <image src="/images/icon1.png"  data-id="{{item.ID}}" bindtap="orderDetail" style='position:absolute;right:37rpx;top:40rpx;width:64px;height:64px'></image>
         </view>
 
     </view>

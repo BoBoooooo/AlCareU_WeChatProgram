@@ -24,7 +24,7 @@
     <view class="weui-btn-area" style='margin-top:15px'>
 
       <button class="weui-btn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="login">登录</button>
-      <button class="weui-btn" style='margin-top:15px' type="warn" bindtap='register'>还没帐号？注册</button>
+      <!-- <button class="weui-btn" style='margin-top:15px' type="warn" bindtap='register'>还没帐号？注册</button> -->
     </view>
   </view>
 </view>

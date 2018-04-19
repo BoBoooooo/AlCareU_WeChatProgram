@@ -16,7 +16,14 @@
   <view class="about" bindtap="aboutUs">
     关于我们
   </view>
+    <view class="about" bindtap="ChangePassword">
+    修改密码
+  </view> 
   <view class="about" bindtap="CheckOut">
     重新登录
   </view> 
 </view>
+
+<modal hidden="{{hidden}}" title="更改密码" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+    <input bindinput="bindKeyInput" type='text'placeholder="请输入新密码" auto-focus />  
+</modal>  
