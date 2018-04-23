@@ -57,7 +57,7 @@ register:function(){
             wx.setStorageSync('Token', res.data.Token);
             wx.showModal({
               title: '提示',
-              content: '登录成功!',
+              content: res.data.Message,
               showCancel:false,
               success: function (res) {
                 if (res.confirm) {
