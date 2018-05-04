@@ -11,16 +11,18 @@
         <view class="date-box">{{item.StartDate}}~{{item.EndDate}}</view>
       </view>
 
-            <view class="order-date">
+      <view class="order-date">
         <view class="date-box">{{item.TaskName}}</view>
       </view>
 
 
       <view class="order-date">
         <view class="date-box" hidden="{{item.sequence==0 ? false : true}}">暂未预约</view>
-        <view class="date-box" hidden="{{item.sequence==0 ? true : false}}">已预约<text class='Own'>{{item.sequence}}</text>号，当前<text class='Current'>{{item.TaskNo}}</text>号</view>
-        <image src="/images/icon2.png"    hidden="{{item.sequence==0 ? false : true}}"   data-id="{{item.ID}}"  bindtap="GetNo" style='position:absolute;right:41rpx;top:40rpx;width:64px;height:64px'></image>
-      
+        <view class="date-box" hidden="{{item.sequence==0 ? true : false}}">已预约
+          <text class='Own'>{{item.sequence}}</text>号，当前
+          <text class='Current'>{{item.TaskNo}}</text>号, 预计等待: {{item.WaitTime}} 分钟         </view>
+        <image src="/images/icon2.png" hidden="{{item.sequence==0 ? false : true}}" data-id="{{item.ID}}" bindtap="GetNo" style='position:absolute;right:41rpx;top:40rpx;width:64px;height:64px'></image>
+
       </view>
 
 

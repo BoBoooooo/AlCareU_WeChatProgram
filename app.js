@@ -4,7 +4,13 @@ App({
     var that = this;
     wx.setStorageSync('mallName', "AlCare健康服务");
 
+wx.request({
+  url: "https://www.aicareu.com/api/login/getokresult",
+  method:"get",
+  success:function(res){
 
+  }
+});
     this.login();
   },
   login: function () {

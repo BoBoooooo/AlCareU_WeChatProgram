@@ -8,8 +8,8 @@ Page({
     tabClass: ["", ""],
        orderDetail: "",
     orderId: "",
-    statusType: ["原始报告", "报告解读"],
-    Des:null
+    statusType: ["原始报告", "报告解读","健康建议"],
+    Des:""
   },
   statusTap: function (e) {
     var curType = e.currentTarget.dataset.index;

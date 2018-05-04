@@ -6,7 +6,7 @@
     </view>
   </view>
 
-  <view class="order-list" hidden="{{currentType==1 ? true : false}}">
+  <view class="order-list" hidden="{{currentType==0 ? false : true}}">
     <import src="/wxParse/wxParse.wxml" />
     <view class='container'>
       <template is="wxParse" data="{{wxParseData:article.nodes}}" />
@@ -15,11 +15,27 @@
 
   </view>
 
+  <view class="order-list" hidden="{{currentType==2 ? false : true}}">
+    <view class="page">
+  <view class="no-order" hidden="{{Des!=null}}">
+    <image src="/images/no-order.png" class="no-order-img"></image>
+    <view class="text">暂无建议</view>
+
+  </view>
+      <view class="page__bd" style='text-align:left;width:680rpx;margin:0 auto;margin-top:30rpx'>
+       {{Des.Advise}}
+    </view>
+     </view>
+  </view>
 
 
-  <view class="order-list" hidden="{{currentType==0  ? true : false}}">
+  <view class="order-list" hidden="{{currentType==1  ? false : true}}">
     <view class="page" style='background:#eee'>
+ <view class="no-order" hidden="{{Des!=null}}">
+    <image src="/images/no-order.png" class="no-order-img"></image>
+    <view class="text">暂无解读情况</view>
 
+  </view>
       <view class="page__bd">
         <view class="weui-article" style='padding:20px 0px'>
           <view class="weui-article__section">
@@ -125,4 +141,6 @@
     </view>
 
   </view>
+
+
 </view>

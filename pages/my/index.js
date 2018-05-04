@@ -37,6 +37,40 @@ Page({
       showCancel:false
     })
   },
+
+  aboutMe: function () {
+    var token = wx.getStorageSync('Token');
+
+    wx.request({
+      url: 'https://www.aicareu.com/api/appointment/GetPersonDetail',
+      header: {
+        'auth': token
+
+      },
+      success:function(res){
+
+        console.log(res);
+        var mes = "公司:"+res.data.DeptName+"\r\n";
+        mes += "姓名:" + res.data.RealName +"\r\n";
+        mes += "性别:" + res.data.Gender + "\r\n";
+        mes += "出生年月:" + res.data.DOB + "\r\n";
+
+        mes += "联系方式:" + res.data.Mobile + "\r\n";
+
+        mes += "电子邮箱:" + res.data.Email + "\r\n";
+
+
+
+
+        wx.showModal({
+          title: '个人信息',
+          content: mes,
+          showCancel: false
+        })
+      }
+    })
+    
+  },
   CheckOut:function(){
 
     wx.removeStorage({
