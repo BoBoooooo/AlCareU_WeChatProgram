@@ -1,90 +1,174 @@
-<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+   <view  style='max-height:100%;overflow:auto'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="weui-cells__title">健康问卷调查</view>
+      <view  style='padding-left:10px'>
 
-  <view class="page__bd">
-    <form bindsubmit="formSubmit" bindreset="formReset">  
+        <view class="item" wx:if="{{IsFeMale}}">
+          <text>是否处于妊娠期</text>
 
-    <view class="weui-cells__title">基本信息</view>
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_input weui-cell_warn">
-        <view class="weui-cell__hd">
-          <view class="weui-label">用户名</view>
-        </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" name="UserName"  placeholder="请输入用户名" />
-        </view>
-         <view class="weui-cell__ft">
-        <icon type="warn" size="23" color="#E64340"></icon>
-      </view>
-      </view>
-      <view class="weui-cell weui-cell_input weui-cell_warn">
-        <view class="weui-cell__hd">
-          <view class="weui-label">密码</view>
-        </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" name="Password" type='password' placeholder="请输入密码" />
-        </view>
-         <view class="weui-cell__ft">
-        <icon type="warn" size="23" color="#E64340"></icon>
-      </view>
-      </view>
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">姓名</view>
-        </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input"  name="RealName" placeholder="请输入姓名" />
-        </view>
-      </view>
+          <switch name="no2" />
 
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">qq</view>
         </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="请输入qq" name="QQ" />
-        </view>
-      </view>
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">手机号</view>
-        </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="请输入手机号" name="Mobile" />
-        </view>
-      </view>
+        <view class="item">
+          <text>是否有吸烟史</text>
 
-      <view class="weui-cell weui-cell_input weui-cell_warn">
-        <view class="weui-cell__hd">
-          <view class="weui-label">身份证</view>
+          <switch bindchange="switchChange" name="no3" />
+
         </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="请输入身份证" name="IDCard" />
+        <view class="item" wx:if="{{Smoke}}">
+          <text>您每天的吸烟量为</text>
+
+            <picker bindchange="bindPickerChange" value="{{index}}" name="no4"  range="{{array}}">
+                  <button style='float:right;margin-right:10rpx' size='mini' type="default">{{select}}</button>
+  </picker>
+
         </view>
-          <view class="weui-cell__ft">
-        <icon type="warn" size="23" color="#E64340"></icon>
-      </view>
-      </view>
+        <view class="item">
+          <text>您是否经常进行体育锻炼</text>
+
+          <switch name="no5" />
+
+        </view>
+        <view class="item">
+          <text>您体检前三天内否做过剧烈的体育运动                
+</text>
+
+          <switch name="no6" />
+
+        </view>
+        <view class="item">
+          <text>您是否长期饮酒                                  
+</text>
+
+          <switch name="no7" />
+
+        </view>
+        <view class="item">
+          <text>您体检前三天是否有大量饮酒                      
+</text>
+
+          <switch name="no8" />
+
+        </view>
+        <view class="item">
+          <text>您体检前三天是否有通宵熬夜的情况            
+</text>
+
+          <switch name="no9" />
+
+        </view>
+        <view class="item">
+          <text>您在体检前三天内是否有暴饮暴食情况             
+</text>
+
+          <switch name="no10" />
+
+        </view>
+        <view class="item">
+          <text>您是否经常熬夜                                
+</text>
+
+          <switch name="no11" />
+
+        </view>
+        <view class="item">
+          <text>您是否最近有头晕或头部不适        
+</text>
+
+          <switch name="no12" />
+
+        </view>
+        <view class="item">
+          <text>您是否最近有乏力气短、心悸的情况                 
+</text>
+
+          <switch name="no13" />
+
+        </view>
+        <view class="item">
+          <text>您最近是否有急性发热的情况                    
+</text>
+
+          <switch name="no14" />
+
+        </view>
+        <view class="item">
+          <text>您最近是否有胸闷、心胸部疼痛不适的情况          
+</text>
+
+          <switch name="no15" />
+
+        </view>
+        <view class="item">
+          <text>您最近是否有服用抗血凝类药物                    
+</text>
+
+          <switch name="no16" />
+
+        </view>
+        <view class="item" style='margin-bottom:60rpx'>
+          <text>您最近两周内是否有胃部不适（如胃痛、胃胀、嗳气、泛酸等）
+</text>
+
+          <switch name="no17" />
+
+        </view>
+        <view class="item">
+          <text>您最近一周内是否有腰腿部不适或疼痛              
+</text>
+
+          <switch name="no18" />
+
+        </view>
+        <view class="item">
+          <text>您最近两周内大小便是否正常                      
+</text>
+
+          <switch name="no19" />
+
+        </view>
+        <view class="item">
+          <text>您是否曾做过重大手术                            
+</text>
+
+          <switch name="no20" />
+
+        </view>
+        <view class="item">
+          <text>您或者您的家族是否有高血压疾病史                 
+</text>
+
+          <switch name="no21" />
+
+        </view>
+        <view class="item">
+          <text>您或者您的家族是否有心脏疾病史                  
+</text>
+
+          <switch name="no22" />
+
+        </view>
+        <view class="item">
+          <text>您或者您的家族是否有糖尿疾病史                   
+</text>
+
+          <switch name="no23" />
+
+        </view>
+        <view class="item">
+          <text>您或者您的家族是否有脑部疾病史                   
+</text>
+
+          <switch name="no24" />
+
+        </view>
     
-    </view>
 
-    <!-- <checkbox-group bindchange="bindAgreeChange">
-      <label class="weui-agree" for="weuiAgree">
-        <view class="weui-agree__text">
-          <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
-          <view class="weui-agree__checkbox-icon">
-            <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
-          </view>
-          阅读并同意
-          <navigator url="" class="weui-agree__link">《相关条款》</navigator>
-        </view>
-      </label>
-    </checkbox-group> -->
+      </view>
 
-    <view class="weui-btn-area">
-      <button class="weui-btn" type="primary" formType="submit">确认注册</button>  
-      <button class="weui-btn" type="warn" bindtap='login'>已有帐号？登录</button>  
-
-    </view>
+<view style='height:50rpx'></view>
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" formType="submit">提交</button>
+      </view>
     </form>
-  </view>
 </view>

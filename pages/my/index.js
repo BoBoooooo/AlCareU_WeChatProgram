@@ -71,6 +71,14 @@ Page({
     })
     
   },
+
+  Test: function () {
+    wx.navigateTo({
+      url: '/pages/mine_home/mine_home',
+    })
+  },
+
+
   CheckOut:function(){
 
     wx.removeStorage({

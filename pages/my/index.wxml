@@ -18,6 +18,9 @@
   <view class="about" bindtap="aboutUs">
     关于我们
   </view>
+      <view class="about" bindtap="Test">
+    问卷调查
+  </view> 
     <view class="about" bindtap="ChangePassword">
     修改密码
   </view> 
