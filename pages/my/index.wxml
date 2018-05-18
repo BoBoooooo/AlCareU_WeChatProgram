@@ -29,6 +29,6 @@
   </view> 
 </view>
 
-<modal hidden="{{hidden}}" title="更改密码" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+<modal wx:if="{{!hidden}}" title="更改密码" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
     <input bindinput="bindKeyInput" type='text'placeholder="请输入新密码" auto-focus />  
 </modal>  
